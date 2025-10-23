@@ -1,0 +1,763 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/pbp/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Open+Sans&display=swap" rel="stylesheet">
+        <title>PORTO</title>
+        
+        <style>
+            body{
+                background: linear-gradient(-45deg, #89f7fe, #66a6ff, #5b86e5, #36d1dc);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+                height: 100%;
+                margin: 0;
+                font-family: poppins, open sans;
+                color:#3c3a57;
+                display: flex;
+                flex-direction: column;
+            }
+            main {
+                flex:1;
+            }
+            
+            @keyframes gradient {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        
+            @keyframes slideUp {
+                from { opacity: 0; transform: translateY(40px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            h1{
+              display: flex;
+              justify-content: center;
+              text-shadow: #b9af98;
+              text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+              animation: slideUp 1.5s ease-out;
+            }
+            h2.text-light, h3.text-light {
+                color: #555 !important;   
+                text-shadow: none;
+                animation: slideUp 1.5s ease-out;
+            }
+            p {
+                line-height: 1.8;
+                font-size: 1.05rem;
+                color: #37474f;
+            }
+
+            .Beranda-container{
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                gap: 40px;
+                padding: 40px; 
+                flex-wrap: wrap; 
+            }
+            .pp_base{
+                width: 400px;
+                height: 400px;
+                border-radius: 30px;
+                border: 25px solid #ffffff;
+                background-color: #ffffff;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                transition: transform 0.3s ease; 
+            }
+            .pp_base:hover {
+                transform: scale(1.05); 
+                
+            }
+            .pp{
+                width : 90%;
+                height : 90%;
+                border-radius : 30px;
+                border : 6px solid #b0cbff;
+                overflow : hidden; 
+                transition: all 0.3s ease;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+            .pp:hover{
+                border-color: #4873c7;
+            }
+            .pp img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;     
+                display: block;
+            }
+
+            .description{
+                max-width: 600px; 
+                animation: slideInLeft 0.8s ease-out;
+                text-align: justify;
+            }
+            
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            .content{
+                display: none;
+            }
+            .content.active{
+                display: block;
+            }
+
+            .skills .badge{
+                border-radius: 10px;
+                color: #3c3a57;
+                font-size: 16px;
+                font-weight: 500;
+                transition: all 0.2s ease-in-out;
+            }
+            .skills .badge:hover{
+                background-color: #d6d6f5; 
+                transform: scale(1.05);
+            }
+
+            .chat-box{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                gap: 10px;
+                max-width: 500px;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.2);
+                padding: 20px;
+                border-radius: 30px;
+                backdrop-filter: blur(10px);
+                justify-content: space-between;
+                margin-top: 50px;               
+            }
+            .buble_chat{
+                max-width: 80%;
+                opacity: 0;
+                transform: translateY(15px);
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 15px;
+                animation: appear 0.8s ease forwards;
+                background: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #1f1f1f;
+                font-weight: bold;
+                font-family: 'Segoe UI', sans-serif;
+                font-size: 16px;
+                animation: appear 0.8s ease forwards;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .buble_bot{
+                max-width: 80%;
+                align-self: flex-start;
+                background: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: rgb(41, 4, 4);
+            }
+            @keyframes appear {
+                to {
+                opacity: 1;
+                transform: translateY(0);
+                }
+            }
+
+            .box_Kontak{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+            .box_img{
+                width : 60px;
+                height : 60px;
+                border-radius : 20px;
+                border : 5px solid #b0cbff ;
+                overflow : hidden;  
+            }
+            .box_img img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;     
+                display: block;
+            }
+            .content_Kontak{
+                display : flex;
+                align-items : center;
+                gap : 15px;
+                margin : 15px;
+                color: #3c3a57;
+                text-align : justify;
+            }
+            .content_Kontak a{
+                color: #3c3a57;
+                text-decoration : none;
+            }
+            .content_Kontak a:hover {
+                transform: scale(1.1);
+            }
+            .content_Kontak a:hover .box_img {
+                border-color: #4873c7;
+            }
+            .btn-warning:hover {
+                animation: shake 0.5s;
+            }
+
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+
+            .card {
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            .card::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                background: linear-gradient(45deg, #e0f3ff, #9299d7);
+                border-radius: 0.25rem;
+                z-index: -1;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
+            }
+            .card:hover::before {
+                opacity: 1;  
+            }
+            .project-card{
+                opacity: 0;
+                transform: translateY(50px);
+                animation: fadeInUp 0.8s ease forwards;
+            }
+            .project-card:nth-child(1) { animation-delay: 0.2s; }
+            .project-card:nth-child(2) { animation-delay: 0.4s; }
+            .project-card:nth-child(3) { animation-delay: 0.6s; }
+            .project-card:nth-child(4) { animation-delay: 0.8s; }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+           
+            .project-img-wrapper {
+                overflow: hidden;
+                height: 250px;
+                position: relative;
+            }
+            .project-img-wrapper img {
+                transition: transform 0.5s ease;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .project-card:hover .project-img-wrapper img {
+                transform: scale(1.15) translateY(-10px);
+            }
+            
+            .project-card .card {
+                transition: all 0.4s ease;
+                transform-style: preserve-3d;
+            }
+            .project-card:hover .card {
+                transform: translateY(-15px) rotateX(5deg);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
+            }
+
+            .edc_card{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .flip_card{
+                background-color: transparent;
+                width: 100%;
+                height: 350px;
+                perspective: 1000px;
+            }
+            .flip_muter{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+            }
+            .flip_depan{
+                background: linear-gradient(135deg, #f2f3f5, #e6e9ef);
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                color: #3c3a57;
+            }
+            .flip_card.flipped .flip_muter {
+                transform: rotateY(180deg);
+            }
+            .flip_depan,
+            .flip_belakang {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+            .flip_belakang{
+                background: linear-gradient(45deg, #e0f3ff, #9299d7);
+                color: #3c3a57;
+                transform: rotateY(180deg);
+            }
+            .flip-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .navbar-dark .navbar-nav .nav-link{
+                color: #555 !important;
+            }
+            .navbar-dark .navbar-nav .nav-link:hover {
+                color: white !important;
+            }
+            .navbar-dark .navbar-brand{
+                color: #555 !important;
+            }
+            .navbar-dark .navbar-brand:hover{
+                color: white !important;
+            }
+            footer {
+                text-align: center;
+                padding: 20px;
+                margin-top: 50px;
+                background: rgba(255, 255, 255, 0.4);
+                font-size: 0.9rem;
+                color: #444;
+            }
+        </style>
+    </head>
+    <body> 
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgba(255, 255, 255, 0.3)"; color: #555 !important; backdrop-filter: blur(10px); border-bottom: 2px solid rgba(255, 255, 255, 0.3); >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Portofolio </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="showSection('Beranda', this)">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Riwayat</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="showSection('Riwayat Pendidikan', this)">Riwayat Pendidikan</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showSection('Pengalaman Organisasi', this)">Pengalaman Organisasi</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="showSection('Projek', this)">Projek</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="showSection('Kontak', this)">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="Beranda" class="content active">
+            <br><h1>HI, AKU FIDELA NABILAH PUTRI HARINSI</h1><br>
+            <div class="Beranda-container">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    <div class="pp_base">
+                        <div class="pp">
+                            <img src="pp.jpeg" alt="pp">
+                        </div>
+                    </div>
+                    <div class="content_Kontak">
+                        <a href="https://www.instagram.com/fidelanb_?igsh=MWV1bmVsb2R6bWs2dg">
+                            <div class="box_img">
+                                <img src="ig_2.jpg" alt="logo ig">
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/@keyraa.f">
+                            <div class="box_img">
+                                <img src="yt_2.jpg" alt=" logo yt">
+                            </div>
+                        </a>
+                        <a href="https://github.com/delaaa06">
+                            <div class="box_img">
+                                <img src="github.jpg" alt="logo github">
+                            </div>
+                        </a>
+                        <a href="https://github.com/delaaa06">
+                            <div class="box_img">
+                                <img src="in_2.jpg" alt="logo linkedin">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="description" >
+                    <h4>Seorang web developer yang suka menciptakan desain yang tidak hanya menarik secara visual, namun juga merepresentasikan karakter dan pemilik website itu sendiri.
+                        Bagi saya, setiap proyek adalah kesempatan untuk saya bisa mengubah ide yang tadinya hanya berdiam diri di kepala menjadi sesuatu yang hidup dan interaktif.
+                        Membuat website bukan hanya sebatas coding, tapi juga tentang menciptakan 'cerita' yang bisa di rasakan oleh setiap mata yang melihatnya. </h4>
+                    <section class="skills text-center mt-5 text-align left">
+                        <h3 class="mb-4 ">Keahlian saya</h3> 
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="badge rounded-pill text-bg-light">Python</span>
+                            <span class="badge rounded-pill text-bg-light">HTML</span>
+                            <span class="badge rounded-pill text-bg-light">CSS</span>
+                            <span class="badge rounded-pill text-bg-light">Java Script</span>
+                            <span class="badge rounded-pill text-bg-light">GITHUB</span>
+                            <span class="badge rounded-pill text-bg-light">Desain Responsif</span>
+                        </div>
+                    </section>
+                </div>               
+            </div>
+        </div>
+ 
+        <div id="Riwayat Pendidikan" class="content">
+            <div class="container my-5">
+                <h2 class="text-center mb-5 text-light ">RIWAYAT PENDIDIKAN</h2><br>     
+                <div class="edc_card">
+                    <!--card 1-->
+                    <div class="flip_card">
+                        <div class="flip_muter">
+                           <div class="flip_depan">
+                                <h3>2028-Sekarang</h3>
+                                <h2>Universitas Negeri Surabaya</h2>
+                                <p>Klik untuk detail</p>
+                           </div>
+                           <div class="flip_belakang">
+                                <h4>S2 Teknik Informatika</h4>
+                                <p>Sedang menempuh studi pascasarjana dengan fokus pada pengembangan web interaktif dan teknologi front-end modern.</p>
+                                <span>Saat ini aktif mengerjakan penelitian tentang optimasi performa website dan pengalaman pengguna (User Experience).</span>
+                           </div> 
+                        </div>
+                </div>
+                    <!--card 2--> 
+                    <div class="flip_card">
+                        <div class="flip_muter">
+                           <div class="flip_depan">
+                                <h3>2024-2028</h3>
+                                <h2>Universitas Negeri Surabaya</h2>
+                                <p>Klik untuk detail</p>
+                           </div>
+                           <div class="flip_belakang">
+                                <h4>S1 Teknik Informatika</h4>
+                                <p>Mempelajari dasar-dasar pemrograman, pengembangan web, dan kecerdasan buatan melalui berbagai proyek individu dan tim.</p>
+                                <span>Lulus dengan predikat Cumlaude dan aktif sebagai asisten laboratorium pemrograman.</span>
+                           </div> 
+                        </div>
+                    </div>
+                <!--card 3--> 
+                    <div class="flip_card">
+                        <div class="flip_muter">
+                           <div class="flip_depan">
+                                <h3>2021-2024</h3>
+                                <h2>SMA 2 Negeri Ngawi</h2>
+                                <p>Klik untuk detail</p>
+                           </div>
+                           <div class="flip_belakang">
+                                <h4>Pelajar dengan minat di bidang teknologi informasi dan web</h4>
+                                <p>Aktif dalam kegiatan organisasi OSIS dan lomba karya ilmiah remaja di tingkat kabupaten.</p>
+                                <span>Lulus dengan nilai yang sangat baik dan berprestasi di bidang sains dan teknologi.</span>
+                           </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div id="Pengalaman Organisasi" class="content">
+            <div class="container my-5">
+                <h2 class="text-center mb-4 text-light">PENGALAMAN ORGANISASI</h2><br>
+                <!--card 1-->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h4> System Information and Network Computing (SINC)</h4><h5>Anggota</h5><br><h5>2024-Sekarang</h5>
+                                <p class="card-text text-dark">* Melakukan pemeliharaan perangkat keras <br> * Menjaga keamanan aset laboratorium<br> * Membantu dosen dalam menjelaskan dan memandu kegiatan praktikum</p>
+                                <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#1Modal">Lihat Detail</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal fade" id="1Modal" tabindex="-1" aria-labelledby="1ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                       <h5 class="modal-title" id="1ModalLabel">SINC</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-light text-dark">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="sinc_pemeliharaan.jpg" class="img-fluid rounded shadow-sm" alt="Kegiatan SINC 1"> 
+                            </div>
+                            <div class="col-md-4">
+                                <img src="sinc_jagalab.jpeg" class="img-fluid rounded shadow-sm" alt="Kegiatan SINC 2"> 
+                            </div>
+                            <div class="col-md-4">
+                                <img src="sinc_bantu2.jpg" class="img-fluid rounded shadow-sm" alt="Kegiatan SINC 3"> 
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="mt-3 fs-5">
+                            Laboratorium SINC adalah pusat riset dan pengembangan di bidang Sistem Informasi dan Jaringan Komputer di bawah Departemen Teknik Informatik di UNESA yang mendukung inovasi melalui penelititan, proyek mahasiswa, dan pengajran berbasis teknologi
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--card 2-->
+        <div class="container my-5">
+            <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h4>Majelis Perwakilan Siswa (MPS)</h4><h5>Anggota</h5><br><h5>2022-2024</h5>
+                                <p class="card-text text-dark">* Mengawasi dan mengevaluasi kinerja osis<br> * Menyiapkan orasi pemilihan ketua Osis dan MPS<br> * Wadah aspirasi siswa agar suara mereka bisa disampaikan secara formal kepada pihak sekolah. </p>
+                                <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#2Modal">Lihat Detail</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal fade" id="2Modal" tabindex="-1" aria-labelledby="2ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                       <h5 class="modal-title" id="2ModalLabel">MPS</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-light text-dark">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="mps_pilih.webp" class="img-fluid rounded shadow-sm" alt="Kegiatan MPS 1"> 
+                            </div>
+                            <div class="col-md-4">
+                                <img src="mps_pilihosis.jpg" class="img-fluid rounded shadow-sm" alt="Kegiatan MPS 2"> 
+                            </div>
+                            <div class="col-md-4">
+                                <img src="mps_rapat.jpeg" class="img-fluid rounded shadow-sm" alt="Kegiatan MPS 3"> 
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="mt-3 fs-5">
+                            Majelis Perwakilan Siswa (MPS) merupakan organisasi yang menjadi tempat bagi siswa untuk belajar berpendapat, berdiskusi, dan mengembangkan kemampuan berpikir kritis serta kepemimpinan.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--card 3-->
+        <div class="container my-5">
+            <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h4>Palang Merah Remaja (PMR)</h4><h5>Angggota</h5><br><h5>2022-2024</h5>
+                                <p class="card-text text-dark">* Memberi pertolongan pertama kepada orang yang sakit<br> * Mengurus dan menjaga UKS<br> * Melaksanakan kegiatan donor darah, penyuluhan kesehatan, dan kebersihan lingkungan.</p>
+                                <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#3Modal">Lihat Detail</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal fade" id="3Modal" tabindex="-1" aria-labelledby="3ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                       <h5 class="modal-title" id="3ModalLabel">PMR</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-light text-dark">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="pmr_gotongorang.jpg" class="img-fluid rounded shadow-sm" alt="Kegiatan PMR 1"> 
+                            </div>
+                            <div class="col-md-4">
+                                <img src="pmr_jagauks.jpg" class="img-fluid rounded shadow-sm" alt="Kegiatan PMR 2"> 
+                            </div>
+                            <div class="col-md-4">
+                                <img src="pmr_donordarah.jpg" class="img-fluid rounded shadow-sm" alt="Kegiatan PMR 3"> 
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="mt-3 fs-5">
+                            Palang Merah Remaja (PMR) adalah wadah pembinaan remaja di bawah naungan Palang Merah Indonesia (PMI) yang bergerak di bidang kemanusiaan.
+                            PMR bertujuan menumbuhkan rasa kepedulian, tanggung jawab sosial, dan semangat tolong-menolong di kalangan pelajar melalui berbagai kegiatan kemanusiaan dan kesehatan.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="Projek" class="content"> 
+            <div class="container my-5 text center">
+                <h3 class="text-center mb-4 text-light margin-bottom ">PROJEK SAYA</h3><br>
+                <div class="row justify-content-center g-4">
+                    <!--card 1-->
+                    <div class="col-md-5 project-card">
+                        <div class="card shadow-lg border-0">
+                            <div class="project-img-wrapper">
+                              <img src="pan_n_plan.png" class="card-img-top" alt="Pan N PLan">  
+                            </div>
+                            <div class="card-body">
+                               <h5 class="card-title">PAN N PLAN - Website Pencarian Resep Masakan Kekinian </h5>
+                               <p class="card-text"> 
+                                Pan n Plan adalah website pencarian resep yang dirancang untuk memudahkan pengguna menemukan berbagai inspirasi masakan dari bahan-bahan yang dimiliki.
+                                Website ini hadir dengan antarmuka yang sederhana dan intuitif, memungkinkan pengguna untuk menjelajahi, menyimpan, serta merencanakan menu masakan harian dengan mudah.
+                                Melalui Pan n Plan, memasak tidak hanya menjadi kebutuhan, tetapi juga pengalaman yang menyenangkan dan terencana.</p>
+                        </div>
+                    </div>
+                </div>
+                    <!--card 2-->
+                    <div class="col-md-5 project-card">
+                        <div class="card shadow-lg border-0">
+                            <div class="project-img-wrapper">
+                              <img src="story_path.png" class="card-img-top" alt="Story Path">  
+                            </div>
+                            <div class="card-body">
+                               <h5 class="card-title">StoryPath - Game Interaktif Berbasis Cerita</h5>
+                               <p class="card-text"> 
+                                StoryPath adalah game berbasis cerita interaktif yang memungkinkan pemain menentukan alur dan ending sesuai pilihan mereka.
+                                Dibangun dengan konsep branching storyline, setiap keputusan pemain akan membawa konsekuensi yang berbeda dan membentuk jalan cerita unik di setiap permainan.
+                                Game ini menggabungkan elemen visual sederhana dengan narasi mendalam, dirancang agar pemain tidak hanya bermain, tetapi juga merasakan pengalaman emosional dari setiap pilihan yang dibuat.</p>
+                        </div>
+                    </div>
+                </div>
+                    <!--card 3-->
+                    <div class="col-md-5 project-card">
+                        <div class="card shadow-lg border-0">
+                            <div class="project-img-wrapper">
+                              <img src="dela_olshop.png" class="card-img-top" alt="Dela's Collections">  
+                            </div>
+                            <div class="card-body">
+                               <h5 class="card-title">Dela's Collections - Website Belanja Fashion Yang Modern dan Responsif </h5>
+                               <p class="card-text"> 
+                                Dela's collection adalah sebuah website yang dirancang untuk memberikan pengalaman belanja online yang cepat, nyaman, dan modern.
+                                Website ini menampilkan katalog produk yang tertata rapi, fitur pencarian cerdas, serta sistem keranjang belanja yang intuitif. Produk Fashion yang ditawarkan di website ini merupakan produk unggulan dalam negeri.</p>
+                        </div>
+                    </div>
+                </div>
+                    <!--card 4-->
+                    <div class="col-md-5 project-card">
+                        <div class="card shadow-lg border-0">
+                            <div class="project-img-wrapper">
+                              <img src="foodrush.png" class="card-img-top" alt="FoodRush">  
+                            </div>
+                            <div class="card-body">
+                               <h5 class="card-title">FoodRush - Website Pengantar Makanan Paling Cepat </h5>
+                               <p class="card-text"> 
+                                FoodRush adalah website layanan pengantar makanan yang berfokus pada kecepatan, kemudahan, dan kenyamanan pengguna. Melalui tampilan yang modern dan responsif, pengguna dapat memesan makanan dari berbagai restoran hanya dalam hitungan detik.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="Kontak" class="content"> 
+            <div class="box_Kontak">
+                <div class="chat-box">
+                    <div class="buble_chat buble_bot" style="animation-delay: 0s;">HOLA</div><br>
+                    <div class="buble_chat buble_bot" style="animation-delay: 1.5s;"> Terima kasih sudah mengunjungi website ku </div><br>
+                    <div class="buble_chat buble_bot" style="animation-delay: 3s;">Bila tertarik untuk berkolaborasi, melakukan kerja sama, atau ingin bertanya-tanya silahkan kirim pesan di samping ya</div><br>
+                    <div class="buble_chat buble_bot" style="animation-delay: 4.5s;">Aku tunggu kolaborasinya yaa :)</div><br>
+                    <div class="buble_chat buble_bot" style="animation-delay: 6s;">With love    -dela</div><br>
+                </div>
+                
+                <div class="chat-box">
+                <div class="mb-3">
+                    <label for="pesan1" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="pesan1" placeholder="nama">
+                 </div>
+                <div class ="mb-3">
+                    <label for="pesan2" class="form-label">Alamat Email</label>
+                    <input type="email" class="form-control" id="pesan2" placeholder="nama@123.com">   
+                </div>
+                <div class="mb-3">
+                    <label for="pesan3" class="form-label">Pesan</label>
+                    <textarea class="form-control" id="pesan3" placeholder="ketik di sini" rows="4"></textarea>
+                </div>
+                <button type="button" class="btn btn-outline-light">Kirim</button>
+            </div>
+
+            </div>
+        </div>
+        <footer>
+            © 2025 Fidela Nabilah Putri Harinsi. Semua hak cipta dilindungi.
+        </footer>
+
+        <script>
+            function showSection(sectionId, element) {
+
+            document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+            }
+            
+            document.querySelectorAll('.flip_card').forEach(card => {
+              card.addEventListener('click', function(){
+                this.classList.toggle('flipped');
+              });
+            });
+        </script>
+        <script src="/pbp/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
