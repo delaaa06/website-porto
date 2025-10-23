@@ -6,14 +6,14 @@ Halaman beranda:
 ![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/beranda.png)
 
 Halaman Riwayat Pendidikan:
-![alt text]()
-![alt text]()
+![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/riwayat%20pendidikan.png)
 
 Halaman Pengalaman Organisasi:
-![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/pengalaman%20organisasi_1.png)
+![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/pengalaman%20organisasi.png)
 
 Halaman Projek:
-![alt text]()
+![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/projek.png)
+![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/projek%20_2.png)
 
 Halaman Kontak:
 ![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/kontak.png)
