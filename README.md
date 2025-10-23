@@ -10,7 +10,7 @@ Halaman Riwayat Pendidikan:
 ![alt text]()
 
 Halaman Pengalaman Organisasi:
-![alt text]()
+![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/pengalaman%20organisasi_1.png)
 
 Halaman Projek:
 ![alt text]()
