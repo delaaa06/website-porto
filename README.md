@@ -16,4 +16,4 @@ Halaman Projek:
 ![alt text]()
 
 Halaman Kontak:
-![alt text]()
+![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/kontak.png)
