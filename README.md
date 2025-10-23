@@ -4,3 +4,16 @@ Ini merupakan contoh website tentang portofolio diri saya sendiri. Contoh websit
 
 Halaman beranda:
 ![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/beranda.png)
+
+Halaman Riwayat Pendidikan:
+![alt text]()
+![alt text]()
+
+Halaman Pengalaman Organisasi:
+![alt text]()
+
+Halaman Projek:
+![alt text]()
+
+Halaman Kontak:
+![alt text]()
