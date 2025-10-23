@@ -4,15 +4,15 @@ Ini merupakan contoh website tentang portofolio diri saya sendiri. Contoh websit
 
 Halaman beranda:
 ![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/beranda.png)
-Pada halaman beranda terdapat foto saya, deskripsi singkat mengenai diri saya, keahlian, dan juga media sosial saya.
+Pada halaman beranda terdapat foto saya, deskripsi singkat mengenai diri saya, keahlian, dan juga media sosial saya yang bisa di interaksi.
 
 Halaman Riwayat Pendidikan:
 ![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/riwayat%20pendidikan.png)
-Pada halaman pendidikan terdapat kartu yang bisa dibalik. Di mana pada bagian depan terdapat tahun dan tempat saya menuntut ilmu sedangakan pada bagian belakang terdapat deskripsi singkat mulai dari apa yang saya pelajari sampai keterangan lulus saya.
+Pada halaman pendidikan terdapat kartu yang bisa dibalik. Di mana pada bagian depan terdapat tahun dan sekolah/univ sedangkan pada bagian belakang terdapat deskripsi singkat mulai dari apa yang saya pelajari sampai keterangan lulus saya. 
 
 Halaman Pengalaman Organisasi:
 ![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/pengalaman%20organisasi.png)
-Pada halaman ini terdapat pengalaman organisasi yang pernah saya ikuti. Ketika user memencet ke tombol lihat detail maka akan terdapat deskripsi singkat tentang organisasi yang saya ikuti dan foto-fotonya (foto hanyalah contoh)
+Pada halaman ini terdapat pengalaman organisasi yang pernah saya ikuti. Ketika user memencet ke tombol lihat detail maka akan terdapat deskripsi singkat tentang organisasi yang saya ikuti dan foto-fotonya (foto hanyalah contoh).
 
 Halaman Projek:
 ![alt text](https://github.com/delaaa06/website-porto/blob/main/Tampilan%20Website/projek.png)
